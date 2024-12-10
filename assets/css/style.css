@@ -22,6 +22,10 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Jost", sans-serif;
 }
 
+input:focus, textarea:focus, select:focus {
+  outline: none;
+}
+
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
@@ -130,7 +134,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header .logo img {
-  max-height: 40px;
+  position: absolute;
+  /* max-height: 40px; */
+  top: 10px;
+  width: 200px;
+  /* background-color: #18d26e; */
 }
 
 /*--------------------------------------------------------------
@@ -192,69 +200,7 @@ h1, h2, h3, h4, h5, h6 {
   background: #ff4a02;
 }
 
-.navbar .dropdown ul {
-  display: block;
-  position: absolute;
-  left: 14px;
-  top: calc(100% + 30px);
-  margin: 0;
-  padding: 10px 0;
-  z-index: 99;
-  opacity: 0;
-  visibility: hidden;
-  background: #fff;
-  box-shadow: 0px 0px 30px rgba(161, 145, 127, 0.25);
-  transition: 0.3s;
-  border-radius: 4px;
-}
 
-.navbar .dropdown ul li {
-  min-width: 200px;
-}
-
-.navbar .dropdown ul a {
-  padding: 10px 20px;
-  font-size: 14px;
-  text-transform: none;
-  font-weight: 500;
-  color: #ff4a02;
-}
-
-.navbar .dropdown ul a i {
-  font-size: 12px;
-}
-
-.navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover, .navbar .dropdown ul li:hover > a {
-  color: #ff4a02;
-}
-
-.navbar .dropdown:hover > ul {
-  opacity: 1;
-  top: 100%;
-  visibility: visible;
-}
-
-.navbar .dropdown .dropdown ul {
-  top: 0;
-  left: calc(100% - 30px);
-  visibility: hidden;
-}
-
-.navbar .dropdown .dropdown:hover > ul {
-  opacity: 1;
-  top: 0;
-  left: 100%;
-  visibility: visible;
-}
-
-@media (max-width: 1366px) {
-  .navbar .dropdown .dropdown ul {
-    left: -90%;
-  }
-  .navbar .dropdown .dropdown:hover > ul {
-    left: -100%;
-  }
-}
 
 /**
 * Mobile Navigation 
@@ -364,11 +310,13 @@ h1, h2, h3, h4, h5, h6 {
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
+  position: relative; /* Make it a positioning context */
   width: 100%;
   height: 80vh;
   background: url('/assets/img/mainBackground.jpeg') no-repeat center center;
   background-size: cover; /* Ensures the image covers the entire section */
 }
+
 
 
 #hero .container {
@@ -502,7 +450,8 @@ section {
 }
 
 .section-bg {
-  background-color: #f3f5fa;
+  color: #1c1c1c;
+  background-color: #e2d5d5;
 }
 
 .section-title {
@@ -559,12 +508,12 @@ section {
   transition: all 0.4s ease-in-out;
   display: inline-block;
   padding: 15px 0;
-  filter: grayscale(100);
+  filter: grayscale(0.3);
 }
 
 .cliens img:hover {
   filter: none;
-  transform: scale(1.1);
+  transform: scale(1.08);
 }
 
 @media (max-width: 768px) {
@@ -1078,7 +1027,7 @@ section {
 .team .member {
   color: #1c1c1c;
   position: relative;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0 25px 0 rgba(248, 0, 0, 0.1);
   padding: 30px;
   border-radius: 5px;
   background: #fff;
@@ -1180,6 +1129,7 @@ section {
   background: #fff;
   width: 100%;
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.1);
+
 }
 
 .contact .info i {
@@ -1251,6 +1201,7 @@ section {
   padding: 30px;
   background: #fff;
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+  color: #1c1c1c;
 }
 
 .contact .php-email-form .form-group {
@@ -1413,6 +1364,7 @@ section {
 #footer {
   font-size: 14px;
   background: #1c1c1c;
+  box-shadow: 0px 0 25px 0 rgba(248, 0, 0, 0.1);
 }
 
 #footer .footer-newsletter {
