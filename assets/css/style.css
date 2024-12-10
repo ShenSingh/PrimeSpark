@@ -29,6 +29,7 @@ input:focus, textarea:focus, select:focus {
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
+/* Preloader */
 #preloader {
   position: fixed;
   top: 0;
@@ -37,25 +38,20 @@ input:focus, textarea:focus, select:focus {
   bottom: 0;
   z-index: 9999;
   overflow: hidden;
-  background: #37517e;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#preloader:before {
-  content: "";
-  position: fixed;
-  top: calc(50% - 30px);
-  left: calc(50% - 30px);
-  border: 6px solid #7e5337;
-  border-top-color: #fff;
-  border-bottom-color: #fff;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  -webkit-animation: animate-preloader 1s linear infinite;
-  animation: animate-preloader 1s linear infinite;
+#preloader-logo {
+  width: 200px;
+  height: 100px;
+  animation: animate-logo 5s linear infinite, zoom-out 5.5s ease-in-out forwards;
 }
 
-@-webkit-keyframes animate-preloader {
+/* Spinning animation */
+@keyframes animate-logo {
   0% {
     transform: rotate(0deg);
   }
@@ -64,14 +60,38 @@ input:focus, textarea:focus, select:focus {
   }
 }
 
-@keyframes animate-preloader {
+/* Zoom-out effect for preloader */
+@keyframes zoom-out {
   0% {
-    transform: rotate(0deg);
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(20);
+  }
+  50% {
+    transform: scale(60);
+  }
+  75% {
+    transform: scale(150);
   }
   100% {
-    transform: rotate(360deg);
+    transform: scale(250);
+    opacity: 0;
   }
 }
+
+/* Back-to-top button zoom-in effect */
+.back-to-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+.back-to-top:hover {
+  transform: scale(1.2); /* Zoom in */
+}
+
 
 /*--------------------------------------------------------------
 # Back to top button

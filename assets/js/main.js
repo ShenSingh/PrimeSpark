@@ -157,12 +157,22 @@
   /**
    * Preloader
    */
-  let preloader = select('#preloader');
-  if (preloader) {
-    window.addEventListener('load', () => {
-      preloader.remove()
-    });
-  }
+  // let preloader = select('#preloader');
+  // if (preloader) {
+  //   window.addEventListener('load', () => {
+  //     preloader.remove()
+  //   });
+  // }
+
+  // Wait for the window to load
+window.addEventListener('load', function () {
+  const preloader = document.getElementById('preloader');
+  preloader.style.opacity = '0'; // Fade out effect
+  setTimeout(() => {
+    preloader.style.display = 'none'; // Completely hide after fading out
+  }, 3000); // Matches the duration of the zoom-out animation
+});
+
 
   /**
    * Initiate  glightbox 
