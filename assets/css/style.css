@@ -116,7 +116,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 #header.header-scrolled, #header.header-inner-pages {
-  background: rgba(0, 0, 0, 0.644);
+  background: rgba(0, 0, 0, 0.781);
 }
 
 #header .logo {
@@ -181,8 +181,11 @@ input:focus, textarea:focus, select:focus {
   margin-left: 5px;
 }
 
-.navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
+.navbar a:hover, 
+.navbar .active, .navbar .active:focus, 
+.navbar li:hover > a {
   color: #ff4a02;
+  font-weight: bold;
 }
 
 .navbar .getstarted {
@@ -198,6 +201,10 @@ input:focus, textarea:focus, select:focus {
 .navbar .getstarted:hover {
   color: #fff;
   background: #ff4a02;
+}
+.navbar .getstarted:focus {
+  color: #fff;
+  padding: 8px 20px;
 }
 
 
